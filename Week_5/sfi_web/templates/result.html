@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verification Results</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+      <a href="{{ url_for('index') }}" class="navbar-brand">🔐 SFI Checker</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card shadow-lg p-4">
+      <h3 class="mb-3 text-center">Verification Results</h3>
+
+      <p><strong>Algorithm:</strong> {{ results.algorithm }}</p>
+      <p><strong>Created:</strong> {{ results.created_utc }}</p>
+
+      <table class="table table-striped table-bordered mt-3">
+        <thead class="table-dark">
+          <tr>
+            <th>File</th>
+            <th>Status</th>
+            <th>Stored Hash</th>
+            <th>Current Hash</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in results.results %}
+          <tr>
+            <td>{{ r.file }}</td>
+            <td>
+              {% if r.ok %}
+                <span class="badge bg-success">✅ OK</span>
+              {% else %}
+                <span class="badge bg-danger">❌ Tampered</span>
+              {% endif %}
+            </td>
+            <td class="text-monospace small">{{ r.stored }}</td>
+            <td class="text-monospace small">{{ r.current }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div class="text-center mt-3">
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

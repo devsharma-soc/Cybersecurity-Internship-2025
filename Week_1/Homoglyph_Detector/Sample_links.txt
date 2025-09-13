@@ -1,0 +1,12 @@
+Hey, check out these links I found:
+
+1. https://www.apple.com
+2. https://www.xn--pple-43d.com     ← looks like apple.com but contains a Cyrillic 'р'
+3. http://www.paypal.com
+4. http://www.pаypal.com            ← notice the first 'a' is Cyrillic
+5. www.google.com
+6. www.gοogle.com                   ← second 'o' is Greek omicron
+7. my-website.net
+8. my-website.com
+9. testdomain.org
+10. tеstdomain.org                  ← first 'e' is Cyrillic

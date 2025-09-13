@@ -1,0 +1,10 @@
+{
+  "algorithm": "sha256",
+  "created_utc": "2025-09-05T09:10:57Z",
+  "files": [
+    {
+      "name": "report.pdf",
+      "hash": "eae83061a575b6dc7b5c55d8d5018ca247dec0e65a7f3e6960b9c21adb867cd5"
+    }
+  ]
+}
